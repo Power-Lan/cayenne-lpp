@@ -49,6 +49,16 @@ trait GPS {
           $item = $this->swap24($item) . "\x00";
         }
       });
+    } else {
+      array_walk($bins, function(&$item) {
+        $sign = unpack('C', $item[2])[1];
+
+        if ($sign > 127) {
+          $item = "\xFF" . $item;
+        } else {
+          $item = "\x00" . $item;
+        }
+      });
     }
 
     array_walk($bins, function(&$item) {
