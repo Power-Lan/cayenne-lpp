@@ -1,5 +1,5 @@
 {
-    "name": "Power-Lan/cayenne-lpp",
+    "name": "power-lan/cayenne-lpp",
     "type": "library",
     "description": "PHP Cayenne LPP encoder and decoder",
     "keywords": [
