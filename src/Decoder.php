@@ -26,6 +26,7 @@ class Decoder implements Iterator, Countable
     public $data;
     private $index;
     private $type2size;
+    private $type2name;
 
     public function __construct(string $payload)
     {
@@ -42,6 +43,21 @@ class Decoder implements Iterator, Countable
         Types\LPP_PRESENCE              => Types\LPP_PRESENCE_SIZE,
         Types\LPP_RELATIVE_HUMIDITY     => Types\LPP_RELATIVE_HUMIDITY_SIZE,
         Types\LPP_TEMPERATURE           => Types\LPP_TEMPERATURE_SIZE,
+        );
+
+        $this->type2name = array(
+        Types\LPP_ACCELEROMETER         => 'accelerometer',
+        Types\LPP_ANALOG_INPUT          => 'analogInput',
+        Types\LPP_ANALOG_OUTPUT         => 'analogOutput',
+        Types\LPP_BAROMETRIC_PRESSURE   => 'pressure',
+        Types\LPP_DIGITAL_INPUT         => 'digitalInput',
+        Types\LPP_DIGITAL_OUTPUT        => 'digitalOutput',
+        Types\LPP_GPS                   => 'gps',
+        Types\LPP_GYROMETER             => 'gyrometer',
+        Types\LPP_LUMINOSITY            => 'luminosity',
+        Types\LPP_PRESENCE              => 'presence',
+        Types\LPP_RELATIVE_HUMIDITY     => 'humidity',
+        Types\LPP_TEMPERATURE           => 'temperature',
         );
 
         $this->data = $this->decode($payload);
@@ -77,6 +93,7 @@ class Decoder implements Iterator, Countable
             $out[] = array(
             'channel' => $channel,
             'type' => $type,
+            'typeName' => $this->type2name[$type],
             'data' => $this->decodeType($type, $chunck)
             );
 

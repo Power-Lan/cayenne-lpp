@@ -18,6 +18,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('digitalInput', $data['typeName']);
         }
     }
 
@@ -30,6 +31,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('digitalOutput', $data['typeName']);
         }
     }
 
@@ -42,6 +44,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('analogInput', $data['typeName']);
         }
     }
 
@@ -54,6 +57,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('analogOutput', $data['typeName']);
         }
     }
 
@@ -66,6 +70,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('luminosity', $data['typeName']);
         }
     }
 
@@ -78,6 +83,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('presence', $data['typeName']);
         }
     }
 
@@ -90,6 +96,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('temperature', $data['typeName']);
         }
     }
 
@@ -102,6 +109,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('humidity', $data['typeName']);
         }
     }
 
@@ -117,6 +125,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']);
+            $this->assertEquals('accelerometer', $data['typeName']);
         }
     }
 
@@ -129,6 +138,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $index => $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']['value']);
+            $this->assertEquals('pressure', $data['typeName']);
         }
     }
 
@@ -144,6 +154,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']);
+            $this->assertEquals('gyrometer', $data['typeName']);
         }
     }
 
@@ -159,6 +170,7 @@ class DecoderTest extends TestCase
         foreach ($decoded as $data) {
             $channel = $data['channel'];
             $this->assertEquals($values[$channel], $data['data']);
+            $this->assertEquals('gps', $data['typeName']);
         }
     }
 }
