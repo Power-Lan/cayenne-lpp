@@ -7,7 +7,7 @@ const LPP_GPS_SIZE = 11;
 
 trait GPS
 {
-    public function addGPS(int $channel, float $latitude, float $longitude, float $altitude) : void
+    public function addGPS(int $channel, float $latitude, float $longitude, float $altitude)
     {
         if ($latitude > 1677.7215) {
             throw new Exception('Latitude is too big to be encoded in GPS (max = 1677.7215)');

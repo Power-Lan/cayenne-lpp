@@ -7,7 +7,7 @@ const LPP_GYROMETER_SIZE = 8;
 
 trait Gyrometer
 {
-    public function addGyrometer(int $channel, float $x, float $y, float $z) : void
+    public function addGyrometer(int $channel, float $x, float $y, float $z)
     {
         if ($x > 655.35) {
             throw new Exception('X Axis is too big to be encoded in Gyrometer (max = 655.35)');

@@ -7,7 +7,7 @@ const LPP_RELATIVE_HUMIDITY_SIZE = 3;
 
 trait RelativeHumidity
 {
-    public function addRelativeHumidity(int $channel, float $value) : void
+    public function addRelativeHumidity(int $channel, float $value)
     {
         if ($value > 127.5) {
             throw new Exception('Value is too big to be encoded in RelativeHumidity (max = 127.5)');

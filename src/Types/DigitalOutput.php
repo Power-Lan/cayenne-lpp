@@ -7,7 +7,7 @@ const LPP_DIGITAL_OUTPUT_SIZE = 3;
 
 trait DigitalOutput
 {
-    public function addDigitalOutput(int $channel, bool $value) : void
+    public function addDigitalOutput(int $channel, bool $value)
     {
         $this->addData($channel, LPP_DIGITAL_OUTPUT, array(
         (int) $value

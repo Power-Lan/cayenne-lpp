@@ -7,7 +7,7 @@ const LPP_PRESENCE_SIZE = 3;
 
 trait Presence
 {
-    public function addPresence(int $channel, bool $value) : void
+    public function addPresence(int $channel, bool $value)
     {
         $this->addData($channel, LPP_PRESENCE, array(
         (int) $value

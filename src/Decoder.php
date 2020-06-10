@@ -175,12 +175,12 @@ class Decoder implements Iterator, Countable
         return $this->index;
     }
 
-    public function next() : void
+    public function next()
     {
         $this->index += 1;
     }
 
-    public function rewind() : void
+    public function rewind()
     {
         $this->index = 0;
     }

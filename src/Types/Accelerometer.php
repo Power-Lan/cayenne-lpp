@@ -7,7 +7,7 @@ const LPP_ACCELEROMETER_SIZE = 8;
 
 trait Accelerometer
 {
-    public function addAccelerometer(int $channel, float $x, float $y, float $z) : void
+    public function addAccelerometer(int $channel, float $x, float $y, float $z)
     {
         if ($x > 65.535) {
             throw new Exception('X Axis is too big to be encoded in Accelerometer (max = 65.535)');

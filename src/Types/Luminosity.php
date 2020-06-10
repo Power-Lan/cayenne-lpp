@@ -7,7 +7,7 @@ const LPP_LUMINOSITY_SIZE = 4;
 
 trait Luminosity
 {
-    public function addLuminosity(int $channel, int $value) : void
+    public function addLuminosity(int $channel, int $value)
     {
         if ($value > 65535) {
             throw new Exception('Value is too big to be encoded in Luminosity (max = 65535)');

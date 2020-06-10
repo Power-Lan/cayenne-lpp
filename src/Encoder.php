@@ -30,7 +30,7 @@ class Encoder
      * @param int   $type    Type of the data
      * @param array $payload Array of bytes to add into the encoder
      */
-    protected function addData(int $channel, int $type, array $payload) : void
+    protected function addData(int $channel, int $type, array $payload)
     {
         $this->buffer[] = $channel;
         $this->buffer[] = $type;
@@ -58,7 +58,7 @@ class Encoder
     /**
      * Clear all data
      */
-    public function reset() : void
+    public function reset()
     {
         $this->buffer = array();
     }

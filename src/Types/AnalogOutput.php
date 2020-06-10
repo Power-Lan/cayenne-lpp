@@ -7,7 +7,7 @@ const LPP_ANALOG_OUTPUT_SIZE = 4;
 
 trait AnalogOutput
 {
-    public function addAnalogOutput(int $channel, float $value) : void
+    public function addAnalogOutput(int $channel, float $value)
     {
         if ($value > 655.35) {
             throw new Exception('Value is too big to be encoded in AnalogOutput (max = 655.35)');

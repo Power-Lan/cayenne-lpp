@@ -7,7 +7,7 @@ const LPP_TEMPERATURE_SIZE = 4;
 
 trait Temperature
 {
-    public function addTemperature(int $channel, float $value) : void
+    public function addTemperature(int $channel, float $value)
     {
         if ($value > 6553.5) {
             throw new Exception('Value is too big to be encoded in Temperature (max = 6553.5)');
